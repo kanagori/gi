@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GeForce NOWアクセス結果</title>
+  </head>
+  <body>
+    <script>
+      fetch('https://play.geforcenow.com/mall/#/install')
+        .then(function(response) {
+          return response.text();
+        })
+        .then(function(html) {
+          var resultContainer = document.createElement('div');
+          resultContainer.innerHTML = html;
+          document.body.appendChild(resultContainer);
+        })
+        .catch(function(error) {
+          console.log('エラーが発生しました:', error);
+        });
+    </script>
+  </body>
+</html>
